@@ -1,4 +1,4 @@
-/.idea
-/.pytest_cache
-/_pycache_
-/venv
+.idea/
+.pytest_cache/
+_pycache_/
+venv/
