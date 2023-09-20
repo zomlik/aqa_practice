@@ -1,5 +1,5 @@
-from selenium.webdriver.common.by import By
 from pages.buttons import SimpleButtons
+from selenium.webdriver.common.by import By
 
 URL = 'https://www.qa-practice.com/elements/button/simple'
 
