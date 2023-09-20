@@ -1,6 +1,5 @@
 from pages.buttons import DisabledButton
 from selenium.webdriver.common.by import By
-import time
 
 URL = "https://www.qa-practice.com/elements/button/disabled"
 
