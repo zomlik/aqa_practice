@@ -5,6 +5,7 @@ import allure
 URL = 'https://www.qa-practice.com/elements/button/simple'
 
 
+@allure.suite("Simple button")
 @allure.feature("Simple button")
 @allure.title("Simple button Label")
 def test_simple_button_label(browser):
@@ -12,9 +13,10 @@ def test_simple_button_label(browser):
     simple_label.go_to(URL)
     simple_label.simple_button_find()
     with allure.step("Label is 'Click"):
-        assert browser.find_element(By.ID, "submit-id-submit").text == "Click"
+        assert simple_label.simple_button_label() == "Click"
 
 
+@allure.suite("Simple button")
 @allure.feature("Simple button")
 @allure.title("Simple button Click")
 def test_simple_button_click(browser):
@@ -26,6 +28,7 @@ def test_simple_button_click(browser):
         assert browser.find_element(By.ID, "result-text").text == "Submitted"
 
 
+@allure.suite("Simple button")
 @allure.feature("Simple button")
 @allure.title("Simple button is enable")
 def test_button_is_enable(browser):
