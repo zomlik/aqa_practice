@@ -6,7 +6,7 @@ URL = 'https://www.qa-practice.com/elements/button/simple'
 
 
 @allure.feature("Simple button")
-@allure.story("label")
+@allure.title("Simple button Label")
 def test_simple_button_label(browser):
     simple_label = SimpleButtons(browser)
     simple_label.go_to(URL)
@@ -16,7 +16,7 @@ def test_simple_button_label(browser):
 
 
 @allure.feature("Simple button")
-@allure.story("click")
+@allure.title("Simple button Click")
 def test_simple_button_click(browser):
     simple_click = SimpleButtons(browser)
     simple_click.go_to(URL)
@@ -27,7 +27,7 @@ def test_simple_button_click(browser):
 
 
 @allure.feature("Simple button")
-@allure.story("enable")
+@allure.title("Simple button is enable")
 def test_button_is_enable(browser):
     simple_enable = SimpleButtons(browser)
     simple_enable.go_to(URL)

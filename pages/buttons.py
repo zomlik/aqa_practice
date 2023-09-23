@@ -47,12 +47,15 @@ class DisabledButton(BasePage):
         super().__init__(browser)
 
     def disabled_button_find(self):
-        return self.find(LOCATER_SIMPLE_BUTTON)
+        with allure.step("Find disabled button"):
+            return self.find(LOCATER_SIMPLE_BUTTON)
 
     def disabled_button_select(self, select_name):
         find_select_element = self.find(LOCATER_DISABLED_BUTTON_SELECT)
         select = Select(find_select_element)
-        return select.select_by_value(select_name)
-    
+        with allure.step("Select value"):
+            return select.select_by_value(select_name)
+
     def disabled_button_click(self):
-        return self.disabled_button_find().click()
+        with allure.step("Disabled button is clicked"):
+            return self.disabled_button_find().click()
