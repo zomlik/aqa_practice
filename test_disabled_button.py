@@ -18,5 +18,13 @@ def test_button_click(browser):
     assert browser.find_element(By.ID, "result-text").text == "Submitted"
 
 
+def test_button_disabled_enabled(browser):
+    button = DisabledButton(browser)
+    button.go_to(URL)
+    button.disabled_button_select(select_name='enabled')
+    assert browser.find_element(By.ID, "id_select_state").get_attribute("value") == "enabled"
+    assert button.disabled_button_find().is_enabled
+    button.disabled_button_select(select_name="disabled")
+    assert browser.find_element(By.ID, "id_select_state").get_attribute("value") == "disabled"
 
 
