@@ -12,7 +12,7 @@ def test_simple_button_label(browser):
     simple_label.go_to(URL)
     simple_label.simple_button_find()
     with allure.step("Label is 'Click"):
-        assert browser.find_element(By.ID, "submit-id-submit") == "Click"
+        assert browser.find_element(By.ID, "submit-id-submit").text == "Click"
 
 
 @allure.feature("Simple button")
