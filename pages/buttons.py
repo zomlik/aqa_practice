@@ -1,6 +1,7 @@
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
+import allure
 
 LOCATER_SIMPLE_BUTTON = (By.ID, "submit-id-submit")
 LOCATER_LOOK_LIKE_BUTTON = (By.CSS_SELECTOR, ".a-button")
@@ -13,10 +14,12 @@ class SimpleButtons(BasePage):
         super().__init__(browser)
 
     def simple_button_find(self):
-        return self.find(LOCATER_SIMPLE_BUTTON)
+        with allure.step("Find simple button"):
+            return self.find(LOCATER_SIMPLE_BUTTON)
 
     def simple_click(self):
-        return self.simple_button_find().click()
+        with allure.step("Click simple button"):
+            return self.simple_button_find().click()
 
     def simple_button_label(self):
         return self.simple_button_find().get_attribute('value')
@@ -27,13 +30,17 @@ class LookLikeButton(BasePage):
         super().__init__(browser)
 
     def like_button_find(self):
-        return self.find(LOCATER_LOOK_LIKE_BUTTON)
+        with allure.step("Find look like button"):
+            return self.find(LOCATER_LOOK_LIKE_BUTTON)
 
     def like_button_click(self):
-        return self.like_button_find().click()
+        with allure.step("Click look like button"):
+            return self.like_button_find().click()
 
+    @property
     def like_button_label(self):
-        return self.like_button_find().text
+        return self.like_button_find.text
+
 
 class DisabledButton(BasePage):
     def __init__(self, browser):
