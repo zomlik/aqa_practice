@@ -12,7 +12,7 @@ def test_simple_button_label(browser):
     simple_label.go_to(URL)
     simple_label.simple_button_find()
     with allure.step("Label is 'Click"):
-        assert simple_label.simple_button_label() == "Click"
+        assert browser.find_element(By.ID, "submit-id-submit") == "Click"
 
 
 @allure.feature("Simple button")
@@ -32,4 +32,4 @@ def test_button_is_enable(browser):
     simple_enable = SimpleButtons(browser)
     simple_enable.go_to(URL)
     with allure.step("Simple button is enabled"):
-        assert simple_enable.simple_button_find().is_enabled()
+        assert browser.find_element(By.ID, "submit-id-submit").is_enabled()
