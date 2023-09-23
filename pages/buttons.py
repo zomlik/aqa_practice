@@ -37,9 +37,8 @@ class LookLikeButton(BasePage):
         with allure.step("Click look like button"):
             return self.like_button_find().click()
 
-    @property
     def like_button_label(self):
-        return self.like_button_find.text
+        return self.like_button_find().text
 
 
 class DisabledButton(BasePage):
