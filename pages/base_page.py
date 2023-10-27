@@ -8,6 +8,6 @@ class BasePage:
     def find(self, args):
         return self.browser.find_element(*args)
 
-    def go_to(self, url):
-        with allure.step("Open page"):
-            return self.browser.get(url)
+    @allure.step("Открытие страницы")
+    def go_to(self, url: str):
+        return self.browser.get(url)
