@@ -25,7 +25,7 @@ def test_2_simbols_text_input(browser, keys="a_"):
     assert text_2simbols.results() == keys
 
 
-@allure.title("Текстовое поле на 2 символа")
+@allure.title("Текстовое поле на 25 символа")
 def test_25_simbols_text_input(browser):
     keys = "asfrgdfgdhdffh13_dsgfdg-3"
     text_25simbols = TextInput(browser)
